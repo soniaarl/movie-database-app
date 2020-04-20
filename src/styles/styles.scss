@@ -1,0 +1,22 @@
+// Import Google Fonts
+
+
+// Import base
+@import './base/settings';
+@import './base/reset';
+@import './base/type';
+
+// Import utilities
+@import './utilities/mixins';
+
+// Import components
+@import './components/body';
+@import './components/wrapper';
+@import './components/header';
+@import './components/nav';
+@import './components/banner';
+@import './components/main';
+@import './components/popularSection';
+@import './components/about';
+@import './components/favourites';
+@import './components/footer';
