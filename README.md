@@ -1,3 +1,9 @@
+## Sonia Project Notes
+- Need to install node modules after cloning
+- react-router-dom has been installed and set up
+- sass has been installed and set up 
+- will probably need to add more components later on
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
