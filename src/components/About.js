@@ -9,12 +9,12 @@ const About = () => (
             
             <div className="profile-pics">
                 <div className="profile-pic">
-                    <a href="http://slau.bcitwebdeveloper.ca/"><img src={require("../images/profile-pics/sonia.png")} alt="Sonia"/></a>
-                    <p>Sonia</p>
+                    <a href="http://slau.bcitwebdeveloper.ca/"><img src={require("../images/profile-pics/sonia.png")} alt="Sonia"/>
+                    <p>Sonia</p></a>
                 </div>
                 <div className="profile-pic">
-                    <a href="http://znouri.bcitwebdeveloper.ca/"><img src={require("../images/profile-pics/zahra.png")} alt="Zahra"/></a>
-                    <p>Zahra</p>
+                    <a href="http://znouri.bcitwebdeveloper.ca/"><img src={require("../images/profile-pics/zahra.png")} alt="Zahra"/>
+                    <p>Zahra</p></a>
                 </div>
             </div>{/* <!-- end of profile pics --> */}
         </main>

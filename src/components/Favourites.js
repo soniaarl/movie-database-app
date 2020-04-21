@@ -13,9 +13,11 @@ const Favourites = () => (
    
             </section> {/* end of favourite-movies */}
 
+         <div className="browse-container">
             <NavLink to={'/'} exact>
-            <h2>Browse more movies</h2>
+            <a className="browse">Browse more movies</a>
             </NavLink>
+        </div>
 
         </main>
         </div> {/* end of wrapper */}

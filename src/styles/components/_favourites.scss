@@ -1,5 +1,13 @@
 .favourites {
-    h2 {
+    .browse-container{
+        text-align: center;
+    }
+    .browse {
         margin-top: 30px;
+        color: $orange;
+        font-size: 24px;
+    }
+    a:hover{
+        color: white;
     }
 }
