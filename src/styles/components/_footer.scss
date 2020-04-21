@@ -1,0 +1,26 @@
+footer {
+    justify-content: center;
+    margin: auto;
+    margin: 50px 0 20px 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .social-media{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        img {
+            padding: 7px;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        text-align: center;
+    }
+    p {
+        margin: 0;
+        font-size: 16px;
+    }
+}

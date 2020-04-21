@@ -12,7 +12,6 @@ const AppRouter = () => (
 	<Router basename={APP_FOLDER_NAME}>
 		<div className="wrapper">
 			<Header />
-			<Nav />
 			<Switch>
 				<Route path={'/'} exact><Home /></Route>
 				<Route path={'/about'}><About /></Route>

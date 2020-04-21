@@ -1,0 +1,13 @@
+$bg_color  :  #0d0d0d;
+$boxcolor :  #131313;
+
+@mixin tablet{
+    @media (min-width: 720px){
+        @content;
+    }
+}
+@mixin tablet-large{
+    @media (min-width: 800px){
+        @content;
+    }
+}

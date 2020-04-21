@@ -1,0 +1,25 @@
+.about {
+    main {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p {
+        max-width: 800px;
+        margin: auto;
+        padding-top: 10px;
+    }
+    text-align: center;
+    .profile-pics {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        .profile-pic:not(:last-child){
+            margin-right: 60px;
+        }
+        img{
+            width: 200px;
+        }
+    }
+}
