@@ -2,6 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Nav from './Nav';
 
+//Menu button script
+
+
 const Header = () => (
 	<header>
 
@@ -15,7 +18,7 @@ const Header = () => (
 
 		<div className="search">
         <input type="text" placeholder="Search for a movie.." />
-        <button><img src={require("../images/icons/search.png")} height="25" width="25"/></button>
+        <button><img src={require("../images/icons/search.png")} height="20" width="20"/></button>
    		</div>{/* <!-- end of search --> */}
 
     <select className="sortby desktop-sort" id="sort-movies">
