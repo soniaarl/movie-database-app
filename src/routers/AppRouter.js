@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Home from '../components/Home';
 import About from '../components/About';
 import Favourites from '../components/Favourites';
+import MoviePage from '../components/MoviePage';
 
 const AppRouter = () => (
 	<Router basename={APP_FOLDER_NAME}>
@@ -16,6 +17,7 @@ const AppRouter = () => (
 				<Route path={'/'} exact><Home /></Route>
 				<Route path={'/favourites'} exact><Favourites /></Route>
 				<Route path={'/about'}><About /></Route>
+				<Route path={'/moviepage'}><MoviePage /></Route>
 			</Switch>
 			<Footer />
 		</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => (
     <footer>
@@ -8,7 +9,7 @@ const Footer = () => (
         <a href="#0"><img src={require("../images/icons/facebook.png")} alt="Facebook" height="35" width="35"/></a>
     </div>{/* <!-- end of social media --> */}
 
-    <a href="about.html"><p>Created by Zahra and Sonia</p></a>
+    <NavLink to={'/'} exact><p>Created by Zahra and Sonia</p></NavLink>
     </footer>
 );
 
