@@ -12,7 +12,6 @@ import Main from '../components/Main';
 
 const AppRouter = () => (
 	<Router basename={APP_FOLDER_NAME}>
-		<div className="wrapper">
 			<Header />
 			<Switch>
 				<Route path={'/'} exact><Home /></Route>
@@ -22,7 +21,6 @@ const AppRouter = () => (
 			</Switch>
 			<Main/>
 			<Footer />
-		</div>
 	</Router>
 );
 
