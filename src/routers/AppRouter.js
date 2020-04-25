@@ -19,7 +19,6 @@ const AppRouter = () => (
 				<Route path={'/favourites'} exact><Favourites /></Route>
 				<Route path={'/about'}><About /></Route>
 				{/* <Route path={'/moviepage'}><MoviePage /></Route> */}
-				<Route path={'/*'}><PageNotFound /></Route>
 			</Switch>
 			<Main/>
 			<Footer />
