@@ -1,0 +1,113 @@
+body{
+    background-color: $bg_color;
+}
+
+h2{
+    color: white;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 30px;
+}
+
+.box{
+    background-color: $boxcolor;
+   
+    padding-bottom: 20px;
+    margin-top: 80px;
+}
+article{
+    max-width: 150px;
+    margin: auto;
+   
+}
+
+
+.rating{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.most{
+display: none;
+}
+hr{
+    display: none;
+}
+.sort label{
+    color: white;
+}
+
+.sort{
+    margin: 50px 34%;
+}
+select{
+    width: 200px;
+    border-radius: 4px;
+}
+
+@include tablet{
+    article{
+        width: 40%;
+    }
+    .box{
+        max-width: 200px;
+        
+    }
+    .most{
+        display: flex;
+        margin-bottom: 100px;
+    }
+    .movies{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    hr{
+        display: block;
+        margin: 9%;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+  
+    .wrapper{
+        padding: 0 10%;
+    }
+    .movies-mostpop{
+        margin-bottom: 20px;
+    }
+    article{
+        margin: 0;
+    }
+    .sort{
+        display: none;
+    }
+
+
+}
+@include tablet-large{
+
+    .wrapper{
+        padding: 0 10%;
+        max-width: 1500px;
+        margin: auto;
+    }
+
+    article{
+        width: 20%;
+        margin-right: 5%;
+    }
+    .box{
+        max-width: 200px;
+        padding-bottom: 5px;
+        
+    }
+  
+    .star{
+        height: 30px;
+        padding-top: 12px;
+    }
+    .rating{
+        padding-top: 5px;
+    }
+ 
+}
