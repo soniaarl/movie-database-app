@@ -2,8 +2,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IMAGE_URL, API_KEY, MOST_POPULAR, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../globals/variables'
-import {movieSection} from '../utilities/movieMaker';
+import {movieSection} from '../utilities/MovieMaker';
 import Banner from './Banner';
+import MovieMaker from '../utilities/MovieMaker';
 
 // Use Effect for getting the movies 
 
@@ -32,10 +33,21 @@ import Banner from './Banner';
           <Banner image={`${IMAGE_URL}/w1280${Movies[5].backdrop_path && Movies[5].backdrop_path}`} 
           title={Movies[5].original_title} 
           text={Movies[5].overview}/>
+        }{/* end banner */}
 
-      }
-      {Movies && <h2>hi</h2>}
-      
+      {/* Rest of movies */}
+      <section className="movies restOfMovies">
+        {Movies && Movies.map((movie, index) => (
+              <React.Fragment key={index}>
+                  <MovieMaker 
+                    poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
+                    movieId={movie.id}
+                  />
+            </React.Fragment>
+        ))}
+      </section> {/* end rest of movies */}
+
+
         <NavLink to={'/moviepage'}><a>Link to sample movie page (temporary)</a></NavLink>
         
     </div>
