@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Main = () =>(
+<div className="wrapper">
 <main>
 <section class="movies restOfMovies">
     <article> 
@@ -95,6 +96,7 @@ const Main = () =>(
     </article> */}
 </section>
 </main>
+</div>// end of wrapper
 
 
 );
