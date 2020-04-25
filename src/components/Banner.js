@@ -2,6 +2,7 @@ import React from 'react'
 
 const Banner = (props) =>(
  
+   
     <div>
         <div className="banner-container">
             <div    className="banner-image">
@@ -11,9 +12,11 @@ const Banner = (props) =>(
             <div className="banner-title">
                 <h1>{props.title}</h1>
                 <p>{props.text}</p>
+                <p> {props.test}</p>
             </div>
         </div>{/* end banner container */}
     </div>
+  
 )
 
 

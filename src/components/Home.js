@@ -18,6 +18,7 @@ import Banner from './Banner';
             .then(response => {
                 console.log(response)
                 setMovies(response.results);
+                console.log(response.results)
             })
 
     }, [])
@@ -31,8 +32,10 @@ import Banner from './Banner';
           <Banner image={`${IMAGE_URL}/w1280${Movies[5].backdrop_path && Movies[5].backdrop_path}`} 
           title={Movies[5].original_title} 
           text={Movies[5].overview}/>
-      }
 
+      }
+      {Movies && <h2>hi</h2>}
+      
         <NavLink to={'/moviepage'}><a>Link to sample movie page (temporary)</a></NavLink>
         
     </div>
