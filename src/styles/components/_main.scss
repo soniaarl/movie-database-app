@@ -44,6 +44,53 @@ select{
     width: 200px;
     border-radius: 4px;
 }
+.heart{
+    background-color: $boxcolor;
+    color: rgb(65, 65, 65);
+    border: none;
+}
+.heart:focus{
+    color: red;
+}
+
+.box{
+    position: relative;
+}
+
+
+.image{
+    display: block;
+
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: rgba(41, 40, 40, 0.719);
+}
+
+.box:hover .overlay{
+    opacity: 1;
+}
+.info{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
 
 @include tablet{
     article{
