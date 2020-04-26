@@ -1,19 +1,21 @@
 import React from 'react';
 
-function movieMaker(props){
+function MovieMaker(props){
     return(
         <article> 
-            <div class="box">
+            <div className="box">
                 <a href={`/movie/${props.movieId}`}>
                 <img src={props.poster} alt={props.title}/>
-                <div class="rating">
-                    <p>{props.rating}</p>
-                    <button class="heart">❤</button>
-                </div> 
                 </a>
+                
+                <div className="rating">
+                    <p>{props.rating}</p>
+                    <button className="heart">❤</button>
+                </div> 
+                
             </div>
         </article>
     );
 }
 
-export default movieMaker
+export default MovieMaker

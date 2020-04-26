@@ -1,7 +1,13 @@
 // Type
-h1, h2, p, a, ul, li {
+h1, h2, p, ul {
     font-family: $mainFont;
     color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+li, a {
+    color: $orange;
     text-decoration: none;
     list-style: none;
 }

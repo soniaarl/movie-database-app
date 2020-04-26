@@ -15,7 +15,7 @@ const Favourites = () => (
 
          <div className="browse-container">
             <NavLink to={'/'} exact>
-            <a className="browse">Browse more movies</a>
+                <p className="browse">Browse more movies</p>
             </NavLink>
         </div>
 

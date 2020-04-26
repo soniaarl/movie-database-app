@@ -3,8 +3,8 @@ import React from 'react';
 const Main = () =>(
 <div className="wrapper">
 <main>
-<section class="movies restOfMovies">
-    <article> 
+<section className="movies restOfMovies">
+    {/* <article> 
         <div class="box">
             <img src={require("../images/movies/GH_Poster.jpg")} alt="Gretel and Hunsel poster"/>
             <div class="rating">
@@ -12,7 +12,7 @@ const Main = () =>(
                 <button class="heart">❤</button>
              </div> 
         </div>
-    </article>
+    </article> */}
     {/* <article> 
         <div class="box">
             <a href="/index.html"><img src="images/movies/loge.jpg" alt="lodge poster"></a>

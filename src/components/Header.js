@@ -18,7 +18,7 @@ const Header = () => (
 
 		<div className="search">
         <input type="text" placeholder="Search for a movie.." />
-        <button><img src={require("../images/icons/search.png")} height="20" width="20"/></button>
+        <button><img src={require("../images/icons/search.png")} alt="Search icon" height="20" width="20"/></button>
    		</div>{/* <!-- end of search --> */}
 
     <select className="sortby desktop-sort" id="sort-movies">

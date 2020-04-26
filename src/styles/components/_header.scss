@@ -23,14 +23,7 @@ header {
             width: 40px;
             }
     }
-    a {
-        text-decoration: none;
-        color: #FFA800;
-        font-family: 'Oswald', sans-serif;
-        :hover {
-            color: white;
-        }
-    }
+
     .search{
         display: flex;
         padding: 0 20px;
@@ -76,6 +69,11 @@ header {
             display: block;
             width: 85px;
             text-align: right;
+            text-decoration: none;
+            font-family: 'Oswald', sans-serif;
+            :hover {
+                color: white;
+            }
         }
     }
     .menu-btn{

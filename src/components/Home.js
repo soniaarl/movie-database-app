@@ -1,39 +1,39 @@
 
-import React, { useEffect, useState, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
-import { IMAGE_URL, API_KEY, MOST_POPULAR, IMAGE_BASE_URL, IMAGE_SIZE, POSTER_SIZE } from '../globals/variables'
-import {movieSection} from '../utilities/MovieMaker';
+import React, { useEffect, useState } from 'react';
+import { IMAGE_URL, API_KEY, MOST_POPULAR } from '../globals/variables'
 import Banner from './Banner';
 import MovieMaker from '../utilities/MovieMaker';
+import SortBy from './SortBy';
 
-// Use Effect for getting the movies 
-
- 
- function Home() {
+const Home = () => {
     const [Movies, setMovies] = useState([]);
+    const [sort, setSort] = useState(`${MOST_POPULAR}`);
 
     useEffect(() => {
-
-        fetch(`${MOST_POPULAR}${API_KEY}`)
-            .then(response => response.json())
-            .then(response => {
-                console.log(response)
-                setMovies(response.results);
-                console.log(response.results)
-            })
-
-    }, [])
+        const fetchMovies = async () => {
+        const allData = await fetch(`${sort}${API_KEY}`)
+            let results = await allData.json();
+            setMovies(results.results);
+            console.log(allData);
+          }
+          fetchMovies();
+    }, [sort])
   
-
+  const handleSortChange = (sort) => {
+    setSort(sort);
+  }
 
   return (
     <div>
       {/* Banner Image */}
-        {Movies[0] && 
-          <Banner image={`${IMAGE_URL}/w1280${Movies[5].backdrop_path && Movies[5].backdrop_path}`} 
-          title={Movies[5].original_title} 
-          text={Movies[5].overview}/>
+        {Movies[1] && 
+          <Banner image={`${IMAGE_URL}/w1280${Movies[1].backdrop_path && Movies[1].backdrop_path}`} 
+          title={Movies[1].original_title} 
+          text={Movies[1].overview}/>
         }{/* end banner */}
+
+      {/* Sort Options */}
+      <SortBy sort={sort} handleSortChange={handleSortChange}/>
 
       {/* Rest of movies */}
       <section className="movies restOfMovies">
@@ -48,7 +48,6 @@ import MovieMaker from '../utilities/MovieMaker';
       </section> {/* end rest of movies */}
 
 
-        <NavLink to={'/moviepage'}><a>Link to sample movie page (temporary)</a></NavLink>
         
     </div>
   );
