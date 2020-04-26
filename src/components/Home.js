@@ -14,7 +14,7 @@ const Home = () => {
         const allData = await fetch(`${sort}${API_KEY}`)
             let results = await allData.json();
             setMovies(results.results);
-            console.log(allData);
+            console.log( results.results);
           }
           fetchMovies();
     }, [sort])
@@ -42,6 +42,10 @@ const Home = () => {
                   <MovieMaker 
                     poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
                     movieId={movie.id}
+                      title={movie.original_title} 
+                      text={movie.overview}
+                      rating={movie.vote_average}
+
                   />
             </React.Fragment>
         ))}

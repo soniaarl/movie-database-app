@@ -48,12 +48,13 @@ select{
     background-color: $boxcolor;
     color: rgb(65, 65, 65);
     border: none;
+    size: 7vw;
 }
 .heart:focus{
     color: red;
 }
 
-.box{
+.container{
     position: relative;
 }
 
@@ -80,7 +81,7 @@ select{
 }
 .info{
     color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -88,9 +89,28 @@ select{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 145px;
 
 }
+.overlay a{
+    color: black;
+}
 
+.MovieExplain{
+    font-size: 11px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical
+    
+    // max-width: 150px;
+    // margin-left: 5px;
+    // margin-right: 5px;
+}
+
+.info-header{
+    margin-top: 0;
+}
 
 @include tablet{
     article{
