@@ -6,7 +6,15 @@ const Main = () =>(
 <section className="movies restOfMovies">
     {/* <article> 
         <div class="box">
-            <img src={require("../images/movies/GH_Poster.jpg")} alt="Gretel and Hunsel poster"/>
+            <img  className="image" src={require("../images/movies/GH_Poster.jpg")} alt="Gretel and Hunsel poster"/>
+            <div className ="overlay">
+                <div className="info"> 
+                <h3 className="info-header">Movie Title</h3>
+                <p>information about the movie</p>
+                <button>More info</button>
+                </div>
+
+            </div>
             <div class="rating">
                 <img class="star" src={require("../images/icons/Star_rating.jpg")}  alt="rating"/>
                 <button class="heart">❤</button>
