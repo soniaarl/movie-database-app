@@ -1,29 +1,46 @@
-import React from 'react';
-
-
-const toggleFavAction = (props) =>  {
-    console.log ("ids" , props);
-    localStorage.setItem(props, props);
-
-}
+import React,{useState} from 'react';
+import { Link } from 'react-router-dom';
+import star from '../images/icons/star.jpg';
+import {IMAGE_URL} from '../globals/variables';
+import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
 
 
 
-function MovieMaker(props){
+
+
+// poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
+//                     movieId={movie.id}
+//                       title={movie.original_title} 
+//                       text={movie.overview}
+//                       rating={movie.vote_average}
+
+function MovieMaker({movie}){
+
+    const [faved , setFaved ] = useState(isItemInStorage(movie));
+    const addToFavs = () =>  {
+
+        setStorage(movie);
+        setFaved(true);
+        }
+
+     const removeFavs = () =>{
+          removeFromStorage(movie);
+          setFaved(false);
+     }
     return(
         <article> 
             <div className="box">
                 <div className="container">
-                <a href={`/movie/${props.movieId}`}>
-                <img src={props.poster} alt={props.title}/>
-                </a>
+                <Link to={`/movie/${movie.id}`}>
+                <img src={`${IMAGE_URL}/w300${movie.poster_path}`} alt={movie.original_title}/>
+                </Link>
                 
                 {/* adding overlay */}
                 <div className ="overlay">
                   <div className="info"> 
-                     <h3 className="info-header">{props.title}</h3>
-                     <p className="MovieExplain" >{props.text}</p>
-                     <button><a href={`/movie/${props.movieId}`}> More info</a></button>
+                     <h3 className="info-header">{movie.original_title}</h3>
+                     <p className="MovieExplain" >{movie.overview}</p>
+                     <Link className="btn" to={`/movie/${movie.id}`}> More info</Link>
                   </div>
 
                  </div> 
@@ -31,8 +48,9 @@ function MovieMaker(props){
                 </div>
                 {/* end of container */}
                 <div className="rating">
-                    <p>  <img src={require("../images/icons/star.jpg")} alt="Sonia"/>  {props.rating}</p>
-                    <button class="heart" onClick={toggleFavAction(props.movieId)}>❤</button>
+                    <p>  <img src={star} alt="star"/>  {movie.vote_average}</p>
+                   { faved == false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
+                    <button className="heart remove" onClick={removeFavs} > remove fav❤</button>}
                 </div> 
                 
             </div>

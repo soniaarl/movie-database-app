@@ -6,7 +6,7 @@ import MovieMaker from '../utilities/MovieMaker';
 import SortBy from './SortBy';
 
 const Home = () => {
-    const [Movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([]);
     const [sort, setSort] = useState(`${MOST_POPULAR}`);
 
     useEffect(() => {
@@ -26,10 +26,10 @@ const Home = () => {
   return (
     <div>
       {/* Banner Image */}
-        {Movies[1] && 
-          <Banner image={`${IMAGE_URL}/w1280${Movies[1].backdrop_path && Movies[1].backdrop_path}`} 
-          title={Movies[1].original_title} 
-          text={Movies[1].overview}/>
+        {movies[1] && 
+          <Banner image={`${IMAGE_URL}/w1280${movies[1].backdrop_path && movies[1].backdrop_path}`} 
+          title={movies[1].original_title} 
+          text={movies[1].overview}/>
         }{/* end banner */}
 
       {/* Sort Options */}
@@ -37,17 +37,18 @@ const Home = () => {
 
       {/* Rest of movies */}
       <section className="movies restOfMovies">
-        {Movies && Movies.map((movie, index) => (
-              <React.Fragment key={index}>
-                  <MovieMaker 
-                    poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
-                    movieId={movie.id}
-                      title={movie.original_title} 
-                      text={movie.overview}
-                      rating={movie.vote_average}
+        {movies && movies.map((movie, index) => (
+             
+                  <MovieMaker key={index}
+                    //  poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
+                    // movieId={movie.id}
+                    //   title={movie.original_title} 
+                    //   text={movie.overview}
+                    //   rating={movie.vote_average}
+                      movie={movie}
 
                   />
-            </React.Fragment>
+           
         ))}
       </section> {/* end rest of movies */}
 
