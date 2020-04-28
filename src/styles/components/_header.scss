@@ -45,17 +45,6 @@ header {
             border: 1px solid $bg_color;
         }
     }
-    .desktop-sort{
-        display: none;
-        width: 100px;
-        margin-top: 20px;
-        margin-right: 10px;
-        height: 30px;
-        font-family: 'Oswald', sans-serif;
-        font-size: 16px;
-        border-radius: 3px;
-        border: 1px solid $bg_color;
-    }
 
     ul{
         display: flex;
@@ -91,6 +80,20 @@ header {
         margin-left: auto;
     }
 }
+.sort-form {
+    text-align: center;
+}
+
+.desktop-sort{
+    width: 200px;
+    margin-top: 30px;
+    margin-right: 10px;
+    height: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 1px solid $bg_color;
+}
 
 .sort {
     text-align: center;
@@ -98,16 +101,7 @@ header {
     margin-top: 60px;
     width: 200px;
 }
-.mobile-sort{
-    width: 200px;
-    margin-top: 20px;
-    height: 30px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 16px;
-    border-radius: 3px;
-    border: 1px solid $bg_color;
-    
-}
+
 
 
 @include tablet{

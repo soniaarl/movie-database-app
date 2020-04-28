@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {useParams} from 'react-router-dom';
+import { IMAGE_URL, API_URL, API_KEY_NOPAGE } from '../globals/variables'
 
-const MoviePage = () => (
+const MoviePage = () => {
+        let movieId = useParams()
+        console.log (movieId);
+    
+        useEffect(() => {
+            const fetchMovies = async () => {
+                const allData = await fetch(`${API_URL}${movieId}${API_KEY_NOPAGE}`)
+                let results = await allData.json();
+                console.log(results);
+                }
+                fetchMovies();
+        
+
+    }, [])
+    return(
     <div>
         <div className="wrapper">
         <main className="moviepage">
@@ -20,6 +36,9 @@ const MoviePage = () => (
         </main>
         </div>{/* <!-- end of wrapper --> */}
     </div>
-);
+
+    );
+
+}
 
 export default MoviePage;

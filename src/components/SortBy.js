@@ -18,7 +18,7 @@ const SortBy = (props) => {
     }
     
     return (
-            <form>
+            <form className="sort-form">
                 <select name="sort-movies" 
                         id="sort-movies" 
                         className="sortby desktop-sort"

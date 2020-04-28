@@ -40,11 +40,6 @@ const Home = () => {
         {movies && movies.map((movie, index) => (
              
                   <MovieMaker key={index}
-                    //  poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
-                    // movieId={movie.id}
-                    //   title={movie.original_title} 
-                    //   text={movie.overview}
-                    //   rating={movie.vote_average}
                       movie={movie}
 
                   />

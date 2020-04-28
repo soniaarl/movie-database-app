@@ -1,13 +1,11 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import star from '../images/icons/star.jpg';
+import comingsoon from '../images/movies/coming-soon.png';
 import {IMAGE_URL} from '../globals/variables';
-import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
+import  {isItemInStorage , setStorage, removeFromStorage} from './storageMaker';
 
-
-
-
-
+ 
 // poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
 //                     movieId={movie.id}
 //                       title={movie.original_title} 
@@ -32,7 +30,7 @@ function MovieMaker({movie}){
             <div className="box">
                 <div className="container">
                 <Link to={`/movie/${movie.id}`}>
-                <img src={`${IMAGE_URL}/w300${movie.poster_path}`} alt={movie.original_title}/>
+                <img src={`${movie.poster_path}` !== null ? `${IMAGE_URL}/w300${movie.poster_path}` : comingsoon } alt={movie.original_title}/>
                 </Link>
                 
                 {/* adding overlay */}
@@ -49,8 +47,8 @@ function MovieMaker({movie}){
                 {/* end of container */}
                 <div className="rating">
                     <p>  <img src={star} alt="star"/>  {movie.vote_average}</p>
-                   { faved == false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
-                    <button className="heart remove" onClick={removeFavs} > remove fav❤</button>}
+                   { faved === false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
+                    <button className="heart remove" onClick={removeFavs} > remove fav ❤</button>}
                 </div> 
                 
             </div>

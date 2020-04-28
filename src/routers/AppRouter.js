@@ -16,7 +16,7 @@ const AppRouter = () => (
 				<Route path={'/'} exact><Home /></Route>
 				<Route path={'/favourites'} exact><Favourites /></Route>
 				<Route path={'/about'}><About /></Route>
-				<Route path={'/movie/:movieId'}><MoviePage /></Route>
+				<Route path='/movie/:movieId'><MoviePage /></Route>
 			</Switch>
 			<Main/>
 			<Footer />
