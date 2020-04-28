@@ -1,39 +1,66 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-import { IMAGE_URL, API_URL, API_KEY_NOPAGE } from '../globals/variables'
+import { IMAGE_URL, API_URL, API_KEY_NOPAGE } from '../globals/variables';
+import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
 
 const MoviePage = () => {
+        // Grabs the id from query string
         let movieId = useParams()
         console.log (movieId);
+
+        // Create state for movies
+        const [Movie, setMovie] = useState([])
+
+        // Add to/remove from favourites
+        const [faved , setFaved ] = useState(isItemInStorage(Movie));
+        const addToFavs = () =>  {
+
+            setStorage(Movie);
+            setFaved(true);
+            }
+
+        const removeFavs = () =>{
+            removeFromStorage(Movie);
+            setFaved(false);
+        }
     
         useEffect(() => {
             const fetchMovies = async () => {
-                const allData = await fetch(`${API_URL}${movieId}${API_KEY_NOPAGE}`)
+                const allData = await fetch(`${API_URL}${movieId.movieId}?api_key=${API_KEY_NOPAGE}`)
                 let results = await allData.json();
                 console.log(results);
+                setMovie(results)
                 }
                 fetchMovies();
-        
-
+    
     }, [])
     return(
-    <div>
+    <div className="moviepage">
+        {/* Banner Image */}
+        <div className="banner-image">
+            <img src={`${IMAGE_URL}/w1280${Movie.backdrop_path && Movie.backdrop_path}`} alt={Movie.original_title}/>
+        </div>
+        {/* end banner image */}
+
         <div className="wrapper">
-        <main className="moviepage">
-            <h1>Movie Title</h1>
-            <img src={require("../images/profile-pics/sonia.png")} alt="Sonia"/><br/>
-            <button>Add to favourites</button>
-            <h2>Overview</h2>
-            <p>This is a page with information about the movie you selected</p>
-            <div className="releasedRating">
-                <h2>Released</h2>
-                <p>Jan 08, 2020</p>
-                <h2>Rating</h2>
-                <p>8/10</p>
-            </div>
-            <h2>Genre</h2>
-            <p>Drama, comedy, Fiction</p>
+        <main>
+       
+        {/* Movie Info */}
+        <h1>{Movie.original_title}</h1>
+
+        {/* Favourite Button */}
+        { faved === false ? <button className="heart add" onClick={addToFavs} > Add to Favourites ❤</button> :
+                    <button className="heart remove" onClick={removeFavs} > Remove from Favourites ❤</button>}
+
+        <h2>Release Date</h2>
+        <p>{Movie.release_date}</p>
+        <h2>Rating</h2>
+        <p>{Movie.vote_average*10}%</p>
+        <h2>Summary</h2>
+        <p>{Movie.overview}</p>
+
         </main>
+
         </div>{/* <!-- end of wrapper --> */}
     </div>
 

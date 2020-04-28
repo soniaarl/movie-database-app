@@ -1,12 +1,29 @@
 .moviepage{
-    img{
-        width: 25%;
-        margin-bottom: 20px;
+    main{
+        padding: 20px;
+    }
+    h1{
+        color: $orange;
     }
     h2{
-        margin-bottom: 0;
+        margin: 10px;
+        font-size: 25px;
+        margin-bottom: 5px;
     }
     p{
         margin-top: 0;
+        margin-bottom: 30px;
+        max-width: 900px;
+        text-align: center;
+        margin: auto;
+    }
+    .heart {
+        font-size: 20px;
+        padding: 5px 15px;
+        color: Red;
+        background-color: white;
+        font-family: $mainFont;
+        margin-bottom: 15px;
+        border-radius: 3px;
     }
 }
