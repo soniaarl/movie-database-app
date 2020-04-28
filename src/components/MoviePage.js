@@ -6,7 +6,6 @@ import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/sto
 const MoviePage = () => {
         // Grabs the id from query string
         let movieId = useParams()
-        console.log (movieId);
 
         // Create state for movies
         const [Movie, setMovie] = useState([])
@@ -23,16 +22,22 @@ const MoviePage = () => {
             removeFromStorage(Movie);
             setFaved(false);
         }
+
+        // Convert release date to string
+        function formatDate(string){
+            let options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(string).toLocaleDateString([],options);
+        }
     
         useEffect(() => {
             const fetchMovies = async () => {
                 const allData = await fetch(`${API_URL}${movieId.movieId}?api_key=${API_KEY_NOPAGE}`)
                 let results = await allData.json();
-                console.log(results);
                 setMovie(results)
+                console.log(results);
                 }
                 fetchMovies();
-    
+                
     }, [])
     return(
     <div className="moviepage">
@@ -53,7 +58,7 @@ const MoviePage = () => {
                     <button className="heart remove" onClick={removeFavs} > Remove from Favourites ❤</button>}
 
         <h2>Release Date</h2>
-        <p>{Movie.release_date}</p>
+        <p>{formatDate(Movie.release_date)}</p>
         <h2>Rating</h2>
         <p>{Movie.vote_average*10}%</p>
         <h2>Summary</h2>

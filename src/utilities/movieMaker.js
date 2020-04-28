@@ -12,6 +12,13 @@ import  {isItemInStorage , setStorage, removeFromStorage} from './storageMaker';
 //                       text={movie.overview}
 //                       rating={movie.vote_average}
 
+// Format date
+function formatDate(string){
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+}
+
+
 function MovieMaker({movie}){
 
     const [faved , setFaved ] = useState(isItemInStorage(movie));
@@ -37,6 +44,7 @@ function MovieMaker({movie}){
                 <div className ="overlay">
                   <div className="info"> 
                      <h3 className="info-header">{movie.original_title}</h3>
+                     <p className="release-date">{formatDate(movie.release_date)}</p>
                      <p className="MovieExplain" >{movie.overview}</p>
                      <Link className="btn" to={`/movie/${movie.id}`}> More info</Link>
                   </div>
