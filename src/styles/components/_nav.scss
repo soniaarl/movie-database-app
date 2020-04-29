@@ -1,0 +1,19 @@
+.hide-nav {
+    display: none;
+}
+
+.show-nav {
+    display: block;
+    width: 100%;
+    z-index: 100;
+}
+
+.mobile-nav{
+    display: flex;
+}
+
+@include tablet {
+    .hide-nav {
+        display: block;
+    }
+}

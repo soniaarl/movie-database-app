@@ -1,44 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Nav from './Nav';
+import Navigation from './Navigation';
+import video from '../images/icons/video.png';
+import search from '../images/icons/search.png';
 
 //Menu button script
-
-
-const Header = () => (
-	<header>
+const Header = () => {
+	const [menu, setMenu] = useState(false);
+    const setActive = () =>  {
+        if(menu === false){
+            setMenu(true);
+            console.log(menu);
+        }else{
+            setMenu(false);
+            console.log(menu);
+        }
+	}
+	
+    return (
+	<header className={menu === false ? "desktop-nav" : "mobile-nav"}>
 
 		{/* Logo */}
     	<NavLink to={'/'} exact>
     	<div className="logo">
-        <img src={require('../images/icons/video.png')} alt="Video icon" height="35" width="35" />
+        <img src={video} alt="Video icon" height="35" width="35" />
         <p>TMDB</p>
     	</div>{/* <!-- end of logo --> */}
     	</NavLink>
 
 		<div className="search">
         <input type="text" placeholder="Search for a movie.." />
-        <button><img src={require("../images/icons/search.png")} alt="Search icon" height="20" width="20"/></button>
+        <button><img src={search} alt="Search icon" height="20" width="20"/></button>
    		</div>{/* <!-- end of search --> */}
 
-    <select className="sortby desktop-sort" id="sort-movies">
-        <option value="Default">Sort</option>
-        <option value="Popular">Popular</option>
-        <option value="Top Rated">Top Rated</option>
-        <option value="Now Playing">Now Playing</option>
-        <option value="Upcoming">Upcoming</option>
-    </select>
+		<div id="menu-btn" className="menu-btn" onClick={setActive}>
+            <div className="menu-bar"></div>
+            <div className="menu-bar"></div>
+            <div className="menu-bar"></div>
+        </div>{/* end menu button */}
 
-	<Nav />
-
-	<div id="menu-btn" className="menu-btn">
-        <div className="menu-bar"></div>
-        <div className="menu-bar"></div>
-        <div className="menu-bar"></div>
-    </div>{/* <!-- end of hamburger button --> */}
+		<div className={menu === false ? "hide-nav" : "show-nav"}>
+		<Navigation />
+		</div>
 
 	</header>
-);
+	)
+}
 
 
 export default Header;

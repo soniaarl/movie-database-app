@@ -1,17 +1,26 @@
 import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import star from '../images/icons/star.jpg';
+import comingsoon from '../images/movies/placeholder-poster.png';
 import {IMAGE_URL} from '../globals/variables';
 import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
 
 
 
+import  {isItemInStorage , setStorage, removeFromStorage} from './storageMaker';
+
+ 
 // poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
 //                     movieId={movie.id}
 //                       title={movie.original_title} 
 //                       text={movie.overview}
 //                       rating={movie.vote_average}
 
+// Format date
+function formatDate(string){
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(string).toLocaleDateString([],options);
+}
 
 
 function MovieMaker({movie}){
@@ -32,13 +41,14 @@ function MovieMaker({movie}){
             <div className="box">
                 <div className="container">
                 <Link to={`/movie/${movie.id}`}>
-                <img src={`${IMAGE_URL}/w300${movie.poster_path}`} alt={movie.original_title}/>
+                <img src={`${movie.poster_path}` !== null ? `${IMAGE_URL}/w300${movie.poster_path}` : comingsoon } alt={movie.original_title}/>
                 </Link>
                 
                 {/* adding overlay */}
                 <div className ="overlay">
                   <div className="info"> 
                      <h3 className="info-header">{movie.original_title}</h3>
+                     <p className="release-date">{formatDate(movie.release_date)}</p>
                      <p className="MovieExplain" >{movie.overview}</p>
                      <Link className="btn" to={`/movie/${movie.id}`}> More info</Link>
                   </div>
@@ -49,8 +59,8 @@ function MovieMaker({movie}){
                 {/* end of container */}
                 <div className="rating">
                     <p>  <img src={star} alt="star"/>  {movie.vote_average}</p>
-                   { faved == false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
-                    <button className="heart remove" onClick={removeFavs} > remove fav❤</button>}
+                   { faved === false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
+                    <button className="heart remove" onClick={removeFavs} > remove fav ❤</button>}
                 </div> 
                 
             </div>
