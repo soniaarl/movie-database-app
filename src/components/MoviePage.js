@@ -2,24 +2,25 @@ import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
 import { IMAGE_URL, API_URL, API_KEY_NOPAGE } from '../globals/variables';
 import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
+import backdrop from '../images/movies/coming-soon-backdrop.png';
 
 const MoviePage = () => {
         // Grabs the id from query string
         let movieId = useParams()
 
         // Create state for movies
-        const [Movie, setMovie] = useState([])
+        const [movie, setMovie] = useState([])
 
         // Add to/remove from favourites
-        const [faved , setFaved ] = useState(isItemInStorage(Movie));
+        const [faved , setFaved ] = useState(isItemInStorage(movie));
         const addToFavs = () =>  {
 
-            setStorage(Movie);
+            setStorage(movie);
             setFaved(true);
             }
 
         const removeFavs = () =>{
-            removeFromStorage(Movie);
+            removeFromStorage(movie);
             setFaved(false);
         }
 
@@ -43,7 +44,10 @@ const MoviePage = () => {
     <div className="moviepage">
         {/* Banner Image */}
         <div className="banner-image">
-            <img src={`${IMAGE_URL}/w1280${Movie.backdrop_path && Movie.backdrop_path}`} alt={Movie.original_title}/>
+            <img src={`${movie.backdrop_path}` !== null ? 
+                      `${IMAGE_URL}/w1280${movie.backdrop_path && movie.backdrop_path}`: 
+                      backdrop } 
+                      alt={movie.original_title}/>
         </div>
         {/* end banner image */}
 
@@ -51,18 +55,18 @@ const MoviePage = () => {
         <main>
        
         {/* Movie Info */}
-        <h1>{Movie.original_title}</h1>
+        <h1>{movie.original_title}</h1>
 
         {/* Favourite Button */}
         { faved === false ? <button className="heart add" onClick={addToFavs} > Add to Favourites ❤</button> :
                     <button className="heart remove" onClick={removeFavs} > Remove from Favourites ❤</button>}
 
         <h2>Release Date</h2>
-        <p>{formatDate(Movie.release_date)}</p>
+        <p>{formatDate(movie.release_date)}</p>
         <h2>Rating</h2>
-        <p>{Movie.vote_average*10}%</p>
+        <p>{movie.vote_average*10}%</p>
         <h2>Summary</h2>
-        <p>{Movie.overview}</p>
+        <p>{movie.overview}</p>
 
         </main>
 

@@ -4,6 +4,7 @@ import { IMAGE_URL, API_KEY, MOST_POPULAR } from '../globals/variables'
 import Banner from './Banner';
 import MovieMaker from '../utilities/MovieMaker';
 import SortBy from './SortBy';
+import backdrop from '../images/movies/coming-soon-backdrop.png';
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -27,7 +28,7 @@ const Home = () => {
     <div>
       {/* Banner Image */}
         {movies[1] && 
-          <Banner image={`${IMAGE_URL}/w1280${movies[1].backdrop_path && movies[1].backdrop_path}`} 
+          <Banner image={`${movies.backdrop_path}` !== null ? `${IMAGE_URL}/w1280${movies[1].backdrop_path && movies[1].backdrop_path}` : backdrop }
           title={movies[1].original_title} 
           text={movies[1].overview}/>
         }{/* end banner */}

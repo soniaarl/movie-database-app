@@ -8,6 +8,8 @@ header {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
+
+    // Logo styles
     .logo {
         justify-content: center;
         p {
@@ -24,6 +26,7 @@ header {
             }
     }
 
+    // Search bar styles
     .search{
         display: flex;
         padding: 0 20px;
@@ -46,11 +49,12 @@ header {
         }
     }
 
+    // Navigation styles
     ul{
         display: flex;
         justify-content: space-evenly;
         font-size: 20px;
-        display: none;
+        // display: none;
         margin-top: 20px;
         padding: 0;
         li {
@@ -65,6 +69,8 @@ header {
             }
         }
     }
+
+    // Hamburger button styles
     .menu-btn{
         margin-top: 22px;
         height: 30px;
@@ -79,7 +85,7 @@ header {
         margin-bottom: 6px;
         margin-left: auto;
     }
-}
+}// end of header
 .sort-form {
     text-align: center;
 }
@@ -103,7 +109,7 @@ header {
 }
 
 
-
+// Responsive styles
 @include tablet{
     header{
         .menu-btn {
