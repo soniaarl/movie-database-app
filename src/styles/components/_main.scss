@@ -48,10 +48,14 @@ select{
     background-color: $boxcolor;
     color: rgb(65, 65, 65);
     border: none;
-    size: 7vw;
+    font-size: 25px;
+    width: 40px;
+    padding-right: 0;
+    padding-left: 0;
+    font-weight: bolder;
 }
 .add:hover{
-    color: red;
+    color: rgba(255, 47, 47, 0.445);
 }
  .remove{
      color: red;
