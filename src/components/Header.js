@@ -46,12 +46,8 @@ const Header = () => {
 		<Navigation />
 		</div>
 
-	
-
-
 	</header>
 	)
 }
-
 
 export default Header;

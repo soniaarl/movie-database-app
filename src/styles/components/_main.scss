@@ -50,6 +50,11 @@ select{
     border: none;
     size: 7vw;
 }
+
+.heart:focus {
+    outline: 0;
+}
+
 .add:hover{
     color: red;
 }
