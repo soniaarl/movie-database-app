@@ -11,12 +11,10 @@ h2{
 
 .box{
     background-color: $boxcolor;
-   
-    padding-bottom: 20px;
     margin-top: 80px;
 }
 article{
-    max-width: 150px;
+    max-width: 180px;
     margin: auto;
    
 }
@@ -25,7 +23,8 @@ article{
 .rating{
     display: flex;
     justify-content: space-around;
-    padding-top: 20px;
+    height: 45px ;
+    // padding-top: 10px;
 }
 .most{
 display: none;
@@ -104,14 +103,17 @@ select{
 
 }
 .overlay a{
-    color: black;
+    color: rgb(255, 255, 255);
+    border: solid 1px rgba(255, 255, 255, 0.246);
+    font-weight: bolder;
+    font: $mainFont;
 }
 
 .MovieExplain{
     font-size: 11px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical
     
     // max-width: 150px;
@@ -121,6 +123,11 @@ select{
 
 .info-header{
     margin-top: 0;
+}
+
+.rating p{
+    margin: 0;
+    margin-top: 7.5px;
 }
 
 @include tablet{
@@ -172,7 +179,8 @@ select{
 
     article{
         width: 20%;
-        margin-right: 5%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
     }
     .box{
         max-width: 200px;
