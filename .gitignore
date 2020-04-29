@@ -29,3 +29,4 @@ yarn-error.log*
 # Css files
 *.css
 *.css.map
+src/styles/components/_main.scss
