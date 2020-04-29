@@ -1,19 +1,61 @@
+// Hamburger button styles
+.menu-btn{
+    margin-top: 22px;
+    height: 30px;
+    justify-self: right;
+    display: block;
+}
+.menu-bar{
+    background-color: #FFA800;
+    height: 4px;
+    width: 35px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    margin-left: auto;
+}
+// Desktop nav
+.desktop-nav{
+    ul {
+        display: flex;
+    }
+}
+
+// Mobile nav styles
+.mobile-nav{
+    display: grid;
+    grid-template-columns: 40px 218px 30px;
+    grid-template-rows: 60px 75px;
+    height: 170px;
+    border-bottom: 1px solid grey;
+    .logo-text {
+        text-align: left;
+    }
+
+}
+// Mobile nav hide/show
 .hide-nav {
     display: none;
 }
 
 .show-nav {
     display: block;
-    width: 100%;
+    justify-content: center;
+    margin: auto;
+    grid-row: 2/3;
+    grid-column: 2/3;
     z-index: 100;
+    
+    li {
+        text-align: center;
+        padding: 0;
+    }
 }
 
-.mobile-nav{
-    display: flex;
-}
+
 
 @include tablet {
     .hide-nav {
         display: block;
     }
+    
 }

@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
     
     return(
-    <div className="mobile-nav"> 
+    <div> 
 
         <nav >
             <ul>
@@ -12,8 +12,7 @@ const Navigation = () => {
                 <li><NavLink to={'/about'}>About</NavLink></li>
             </ul>
         </nav>
-
-       
+   
     </div>
     );
 }

@@ -51,7 +51,6 @@ header {
 
     // Navigation styles
     ul{
-        display: flex;
         justify-content: space-evenly;
         font-size: 20px;
         // display: none;
@@ -70,21 +69,7 @@ header {
         }
     }
 
-    // Hamburger button styles
-    .menu-btn{
-        margin-top: 22px;
-        height: 30px;
-        justify-self: right;
-        display: block;
-    }
-    .menu-bar{
-        background-color: #FFA800;
-        height: 4px;
-        width: 35px;
-        border-radius: 3px;
-        margin-bottom: 6px;
-        margin-left: auto;
-    }
+
 }// end of header
 .sort-form {
     text-align: center;
@@ -114,9 +99,6 @@ header {
     header{
         .menu-btn {
             display: none;
-        }
-        ul {
-            display: flex;
         }
         .desktop-sort {
             display: block;

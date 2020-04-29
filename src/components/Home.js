@@ -30,7 +30,8 @@ const Home = () => {
         {movies[1] && 
           <Banner image={`${movies.backdrop_path}` !== null ? `${IMAGE_URL}/w1280${movies[1].backdrop_path && movies[1].backdrop_path}` : backdrop }
           title={movies[1].original_title} 
-          text={movies[1].overview}/>
+          text={movies[1].overview}
+          id={movies[1].id}/>
         }{/* end banner */}
 
       {/* Sort Options */}
