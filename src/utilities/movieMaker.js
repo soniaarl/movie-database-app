@@ -6,13 +6,13 @@ import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/sto
 
 
 
-
-
 // poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
 //                     movieId={movie.id}
 //                       title={movie.original_title} 
 //                       text={movie.overview}
 //                       rating={movie.vote_average}
+
+
 
 function MovieMaker({movie}){
 
