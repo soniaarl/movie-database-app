@@ -58,8 +58,8 @@ const MoviePage = () => {
         <h1>{movie.original_title}</h1>
 
         {/* Favourite Button */}
-        { faved === false ? <button className="heart add" onClick={addToFavs} > Add to Favourites ❤</button> :
-                    <button className="heart remove" onClick={removeFavs} > Remove from Favourites ❤</button>}
+        { faved === false ? <button className="heart add" onClick={addToFavs} > ❤ </button> :
+                    <button className="heart remove" onClick={removeFavs} > ❤ </button>}
 
         <h2>Release Date</h2>
         <p>{formatDate(movie.release_date)}</p>

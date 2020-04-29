@@ -48,3 +48,5 @@ export const removeFromStorage = (movie, storageItem = FAVS_MOVIES) => {
     localStorage.setItem(storageItem, itemsForStorage);
     return items;
 }
+
+export default getStorage

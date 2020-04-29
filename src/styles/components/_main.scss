@@ -50,10 +50,12 @@ select{
     border: none;
     size: 7vw;
 }
-.heart:focus{
+.add:hover{
     color: red;
 }
-
+ .remove{
+     color: red;
+ }
 .container{
     position: relative;
 }

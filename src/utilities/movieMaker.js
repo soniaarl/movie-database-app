@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import star from '../images/icons/star.jpg';
 import comingsoon from '../images/movies/placeholder-poster.png';
 import {IMAGE_URL} from '../globals/variables';
-import  {isItemInStorage , setStorage, removeFromStorage} from '../utilities/storageMaker';
-
-
-
 import  {isItemInStorage , setStorage, removeFromStorage} from './storageMaker';
+
+
 
  
 // poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
