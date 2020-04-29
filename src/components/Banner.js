@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Banner = (props) =>(
  
    
     <div>
+        <Link to={`/movie/${props.id}`}>
         <div className="banner-container">
             <div    className="banner-image">
                     <img src={props.image} alt={props.title}/>
@@ -15,6 +17,7 @@ const Banner = (props) =>(
                 <p> {props.test}</p>
             </div>
         </div>{/* end banner container */}
+        </Link>
     </div>
   
 )
