@@ -57,8 +57,8 @@ function MovieMaker({movie}){
                 {/* end of container */}
                 <div className="rating">
                     <p>  <img src={star} alt="star"/>  {movie.vote_average}</p>
-                   { faved === false ? <button className="heart add" onClick={addToFavs} > add fav ❤</button> :
-                    <button className="heart remove" onClick={removeFavs} > remove fav ❤</button>}
+                   { faved === false ? <button className="heart add" onClick={addToFavs} > ❤</button> :
+                    <button className="heart remove" onClick={removeFavs} > ❤ </button>}
                 </div> 
                 
             </div>
