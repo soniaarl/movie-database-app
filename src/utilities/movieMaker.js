@@ -29,7 +29,7 @@ function MovieMaker({movie}){
             <div className="box">
                 <div className="container">
                 <Link to={`/movie/${movie.id}`}>
-                <img src={`${movie.poster_path}` !== null ? `${IMAGE_URL}/w300${movie.poster_path}` : comingsoon } alt={movie.original_title}/>
+                <img src={`${movie.poster_path}` !== "null" ? `${IMAGE_URL}/w300${movie.poster_path}` : comingsoon} alt={movie.original_title}/>
                 </Link>
                 
                 {/* adding overlay */}
