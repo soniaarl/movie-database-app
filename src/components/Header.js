@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Navigation from './Navigation';
 import video from '../images/icons/video.png';
-import search from '../images/icons/search.png';
 
 //Menu button script
 const Header = () => {
@@ -56,11 +55,6 @@ const Header = () => {
         <p className="logo-text">TMDB</p>
     	</div>{/* <!-- end of logo --> */}
     	</NavLink>
-
-		<div className="search">
-        <input type="text" placeholder="Search for a movie.." />
-        <button><img src={search} alt="Search icon" height="20" width="20"/></button>
-   		</div>{/* <!-- end of search --> */}
 
 
 		<div id="menu-btn" className="menu-btn" onClick={setActive}>
