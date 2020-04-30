@@ -5,14 +5,13 @@ const Navigation = () => {
     
     return(
     <div> 
-
         <nav >
             <ul>
+                <li><NavLink to={'/'} exact>Home</NavLink></li>
                 <li><NavLink to={'/favourites'}>Favourites</NavLink></li>
                 <li><NavLink to={'/about'}>About</NavLink></li>
             </ul>
         </nav>
-   
     </div>
     );
 }

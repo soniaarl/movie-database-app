@@ -1,5 +1,5 @@
 .favourites {
-    .browse-container{
+    .browse-container {
         text-align: center;
     }
     .browse {
@@ -8,7 +8,18 @@
         font-size: 24px;
         display: inline-block;
     }
-    p:hover{
+    p:hover {
         color: white;
     }
+    .movies {
+        justify-content: center;
+    }
+    article {
+        width: 100%;
+    }
+    .box {
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
 }

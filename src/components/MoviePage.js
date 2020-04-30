@@ -35,7 +35,6 @@ const MoviePage = () => {
                 const allData = await fetch(`${API_URL}${movieId.movieId}?api_key=${API_KEY_NOPAGE}`)
                 let results = await allData.json();
                 setMovie(results)
-                console.log(results);
                 }
                 fetchMovies();
                 

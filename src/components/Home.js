@@ -15,7 +15,6 @@ const Home = () => {
         const allData = await fetch(`${sort}${API_KEY}`)
             let results = await allData.json();
             setMovies(results.results);
-            console.log( results.results);
           }
           fetchMovies();
     }, [sort])
@@ -42,14 +41,9 @@ const Home = () => {
         {movies && movies.map((movie, index) => (
              
                   <MovieMaker key={index}
-                      movie={movie}
-
-                  />
-           
+                              movie={movie}/>
         ))}
       </section> {/* end rest of movies */}
-
-
         
     </div>
   );

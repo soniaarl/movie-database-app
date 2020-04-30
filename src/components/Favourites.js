@@ -1,18 +1,13 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import getStorage from '../utilities/storageMaker';
 import MovieMaker from '../utilities/MovieMaker';
-
-
-
-
 
 const Favourites = () => {
 
     let movieItems = getStorage();
     console.log(movieItems)
     
-
 return(
 
     <div>

@@ -14,8 +14,8 @@ const AppRouter = () => (
 			<Switch>
 				<Route path={'/'} exact><Home /></Route>
 				<Route path={'/favourites'} exact><Favourites /></Route>
-				<Route path={'/about'}><About /></Route>
-				<Route path='/movie/:movieId'><MoviePage /></Route>
+				<Route path={'/about'} exact><About /></Route>
+				<Route path={'/movie/:movieId'} exact><MoviePage /></Route>
 			</Switch>
 			<Footer />
 	</Router>

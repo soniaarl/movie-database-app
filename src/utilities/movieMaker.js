@@ -5,15 +5,6 @@ import comingsoon from '../images/movies/placeholder-poster.png';
 import {IMAGE_URL} from '../globals/variables';
 import  {isItemInStorage , setStorage, removeFromStorage} from './storageMaker';
 
-
-
- 
-// poster={movie.poster_path && `${IMAGE_URL}/w300${movie.poster_path}`}
-//                     movieId={movie.id}
-//                       title={movie.original_title} 
-//                       text={movie.overview}
-//                       rating={movie.vote_average}
-
 // Format date
 function formatDate(string){
     let options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -22,7 +13,6 @@ function formatDate(string){
 
 
 function MovieMaker({movie}){
-
     const [faved , setFaved ] = useState(isItemInStorage(movie));
     const addToFavs = () =>  {
 
