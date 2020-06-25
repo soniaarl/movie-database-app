@@ -31,3 +31,4 @@ yarn-error.log*
 *.css.map
 src/styles/components/_main.scss
 ./src/globals/variables.js
+src/globals/variables.js
